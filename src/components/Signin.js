@@ -1,10 +1,16 @@
 import React from 'react'
 
 
-const Signin = () => {
+const Signin = ({history, match}) => {
     return(
-        <div className='home'>
-            <p>This is from Signin component</p>
+        <div className='signinpage'>
+            <button className='button signin'
+                onClick={
+                        ()=>{history.push("/home")}
+                    }
+            >
+                SignOut
+            </button>
         </div>
     )
 }

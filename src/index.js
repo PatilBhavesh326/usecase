@@ -3,16 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// eslint-disable-next-line no-unused-vars
 import { BrowserRouter } from 'react-router-dom';
+import configureStore from './store'
+import { Provider } from 'react-redux';
 
+const bookStore = configureStore();
 
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>,
+  <Provider store = {bookStore}>
+    <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
